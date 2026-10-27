@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-base: #0D0D0D;
+    --bg-surface: #141414;
+    --bg-card: #1A1A1A;
+    --bg-card-hover: #222222;
+    --accent: #E82626;
+    --accent-glow: rgba(232, 38, 38, 0.35);
+    --border-line: #262626;
+    --border-bright: #333333;
+    --text-primary: #FFFFFF;
+    --text-body: #F5F0E9;
+    --text-muted: #8E8E93;
+    --font-display: 'Syne', 'Space Grotesk', sans-serif;
+    --font-editorial: 'Playfair Display', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    background-color: #0D0D0D;
+    color: #F5F0E9;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: #0D0D0D;
+    position: relative;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+  font-style: italic;
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1;
+}
+
+/* Subtle Film Grain Noise Texture */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Dramatic Vignette */
+.vignette-overlay {
+  background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(13, 13, 13, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Accent Glow Utility */
+.glow-accent {
+  box-shadow: 0 0 35px -5px rgba(232, 38, 38, 0.45);
+}
+
+.glow-accent-sm {
+  box-shadow: 0 0 15px -3px rgba(232, 38, 38, 0.35);
+}
+
+.text-glow-accent {
+  text-shadow: 0 0 24px rgba(232, 38, 38, 0.5);
+}
+
+/* Engineering 1px grid guides */
+.grid-guide-line {
+  background-color: var(--border-line);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E82626;
+}
